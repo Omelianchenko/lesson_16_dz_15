@@ -1,0 +1,98 @@
+@use 'variables';
+@use 'mixin_file';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: variables.$main_bg_color;
+    .main_conteiner {
+        @include mixin_file.conteiner (100%, 240px, variables.$main_conteiner_bg_color);
+        margin-top: 16.7vh;
+        display: flex;
+        .sec_conteiner {
+            display: flex;
+            border-right: 0.5px solid variables.$main_conteiner_bg_color;
+            &:hover .link_text {
+                width: 400px;
+                padding: 10px 16px;
+            }
+            &:hover{
+                .inner_link {
+                    transform:translateX(-100%);
+                }
+            }
+            .link_conteiner {
+                position: relative;
+                display: flex;
+                overflow: hidden;
+                .link {
+                    @include mixin_file.conteiner (80px, 240px, variables.$outer_link_bg_color);
+                    a {
+                        @include mixin_file.conteiner (100%, 100%, transparent);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        svg {
+                            width: 30%;
+                        }
+                    }
+                }
+                .inner_link {
+                    position: absolute;
+                    left: 80px;
+                    transition: all 0.4s ease;
+                    overflow: hidden;
+                    &.twitter_link {
+                        background-color: variables.$twitter_bg_color;
+                    }
+                    &.facebook_link {
+                        background-color: variables.$facebook_bg_color;
+                    }
+                    &.linkedin_link {
+                        background-color: variables.$linkedin_bg_color;
+                    }
+                    &.instagram_link {
+                        background-color: variables.$instagram_bg_color;
+                    }
+                    &.youtube_link {
+                        background-color: variables.$youtube_bg_color;
+                    }
+                    &.tumblr_link {
+                        background-color: variables.$tumblr_bg_color;
+                    }
+                    &.dribbble_link {
+                        background-color: variables.$dribbble_bg_color;
+                    }
+                    a {
+                        svg {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+            .link_text {
+                @include mixin_file.conteiner (0px, 240px, #fff);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0;
+                font-family: sans-serif;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                h2 {
+                    font-size: 32px;
+                    font-weight: 500;
+                    padding-bottom: 16px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 1.4;
+                    width: 378px;
+                }   
+            }
+        }
+    }
+}

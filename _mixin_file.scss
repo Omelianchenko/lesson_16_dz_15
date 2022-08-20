@@ -1,0 +1,5 @@
+@mixin conteiner($width, $height, $bg_color) {
+    width: $width;
+    height: $height;
+    background-color: $bg_color;
+}
